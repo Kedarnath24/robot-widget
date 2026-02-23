@@ -7,11 +7,9 @@ export default defineConfig({
     lib: {
       entry: "src/index.js",
       name: "RobotMascot",
-      fileName: "robot.bundle",
+      fileName: (format) => `robot.bundle.${format}.js`,
       formats: ["umd"],
     },
-    rollupOptions: {
-      external: [], // bundle React inside
-    },
+    
   },
 });
