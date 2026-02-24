@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RobotMascot } from "./RobotMascot";
+import { RobotMascot as RobotMascotComponent } from "./RobotMascot";
 
 // Mount function exposed globally
-function mount(selector) {
+export function mount(selector) {
   const container =
     typeof selector === "string"
       ? document.querySelector(selector)
@@ -15,8 +15,5 @@ function mount(selector) {
   }
 
   const root = ReactDOM.createRoot(container);
-  root.render(React.createElement(RobotMascot));
+  root.render(React.createElement(RobotMascotComponent));
 }
-
-// Expose globally
-window.RobotMascot = { mount };
